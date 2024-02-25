@@ -4,6 +4,10 @@ This is a hybrid Next.js + Python app that uses Next.js as the frontend and Flas
 
 ## Getting Started
 
+Prequisite:
+
+`node >=18.17.0`
+
 First, install the dependencies:
 
 ```bash
