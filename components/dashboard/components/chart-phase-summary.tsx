@@ -43,10 +43,10 @@ export function ChartPhaseSummary({ data }: ChartProps<CycleSummary>) {
               nameKey="title"
               cx="50%"
               cy="50%"
-              outerRadius={128}
-              label={({ percent, title }) => {
-                return `${title} ${(percent * 100).toFixed(2)}%`;
-              }}
+              outerRadius={144}
+              label={({ percent, title }) =>
+                `${title} ${(percent * 100).toFixed(0)}%`
+              }
               labelLine={false}
             >
               {data.map((entry, index) => (
