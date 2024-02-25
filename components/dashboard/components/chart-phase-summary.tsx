@@ -20,7 +20,7 @@ export function ChartPhaseSummary({ data }: ChartProps<CycleSummary>) {
       acc.cooldown += cooldown;
       acc.cold += cold;
       acc.warmup += warmup;
-      acc.warm += warm;
+      acc.warm += warm ?? 0;
       return acc;
     },
     { cooldown: 0, cold: 0, warmup: 0, warm: 0 }

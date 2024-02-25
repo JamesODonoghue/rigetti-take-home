@@ -26,7 +26,7 @@ export interface CycleSummary {
   cooldown: number;
   cold: number;
   warmup: number;
-  warm: number;
+  warm: number | null;
 }
 export const getCycleSummaries = (data: Cycle[]): CycleSummary[] => {
   return data.map((cycle, index) => {
