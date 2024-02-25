@@ -23,6 +23,15 @@ export function CustomBarChart({ data, dataKey }: BarChartProps<CycleSummary>) {
           <YAxis domain={["auto", "auto"]} />
           <Tooltip
             cursor={false}
+            labelFormatter={(value) => `Cycle ${value}`}
+            formatter={(value, name, props) => {
+              return (
+                <>
+                  <span>{value} hours</span>
+                  <div>Fridge ID: {props.payload.fridgeId}</div>
+                </>
+              );
+            }}
             wrapperStyle={{
               background: "hsl(var(--background))",
               borderRadius: "4px",

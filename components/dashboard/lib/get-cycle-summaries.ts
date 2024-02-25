@@ -21,6 +21,7 @@ const getDifferenceInHours = ({
 };
 
 export interface CycleSummary {
+  fridgeId: string;
   cycleNumber: number;
   cooldown: number;
   cold: number;
