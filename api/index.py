@@ -2,7 +2,8 @@ from flask import Flask, Response, jsonify
 import csv
 import json
 app = Flask(__name__)
-csv_file_path = "api/data.csv"
+import os
+csv_file_path = os.getcwd() + "/api/data.csv"
 @app.route('/api/data')
 def get_csv_file():
     data = []

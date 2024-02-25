@@ -7,7 +7,7 @@ import { columns } from "./columns";
 import { DataTable } from "./data-table";
 import { Cycle, CycleApi } from "./types/types";
 import { getCycleSummaries } from "./utils/get-cycle-summaries";
-
+export const dynamic = "force-dynamic";
 const url =
   process.env.NODE_ENV === "development"
     ? "http://127.0.0.1:5328"
