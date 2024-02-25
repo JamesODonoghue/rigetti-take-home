@@ -29,7 +29,7 @@ export const columns: ColumnDef<Cycle>[] = [
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
-          Cooldown start
+          Cooldown Start
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
       );
