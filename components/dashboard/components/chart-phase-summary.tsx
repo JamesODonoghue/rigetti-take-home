@@ -1,7 +1,14 @@
 "use client";
 import React from "react";
 import colors from "tailwindcss/colors";
-import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
+import {
+  PieChart,
+  Pie,
+  Cell,
+  ResponsiveContainer,
+  Label,
+  Tooltip,
+} from "recharts";
 import { CycleSummary } from "@/lib/types";
 interface ChartProps<TData> {
   data: TData[];
@@ -9,8 +16,8 @@ interface ChartProps<TData> {
 
 export function ChartPhaseSummary({ data }: ChartProps<CycleSummary>) {
   const COLORS = [
-    colors.gray[100],
-    colors.gray[300],
+    colors.gray[50],
+    colors.gray[200],
     colors.gray[400],
     colors.gray[500],
   ];
@@ -35,15 +42,15 @@ export function ChartPhaseSummary({ data }: ChartProps<CycleSummary>) {
   return (
     <>
       <div className="flex flex-col items-center w-full h-full">
-        <ResponsiveContainer width="100%" height="100%">
-          <PieChart width={480} height={256}>
+        <ResponsiveContainer width="100%" height={320}>
+          <PieChart width={480} height={320}>
             <Pie
               data={chartData}
               dataKey="value"
               nameKey="title"
               cx="50%"
               cy="50%"
-              outerRadius={144}
+              outerRadius={108}
               label={({ percent, title }) =>
                 `${title} ${(percent * 100).toFixed(0)}%`
               }

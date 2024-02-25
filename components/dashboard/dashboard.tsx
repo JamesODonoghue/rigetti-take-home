@@ -52,7 +52,7 @@ export default function Dashboard({ data }: { data: Cycle[] }) {
           <CardHeader>
             <CardTitle>Cycle Phase Summary</CardTitle>
           </CardHeader>
-          <CardContent className="h-96">
+          <CardContent>
             <ChartPhaseSummary data={cycleSummaries}></ChartPhaseSummary>
           </CardContent>
         </Card>
