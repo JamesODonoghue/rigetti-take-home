@@ -54,9 +54,9 @@ export const getCycleSummaries = (data: Cycle[]): CycleSummary[] => {
         start: warmup_start,
       }),
       warm: !nextCycle
-        ? 0
+        ? null
         : nextCycle.fridge_id !== fridge_id
-        ? 0
+        ? null
         : getDifferenceInHours({
             end: data[index + 1].cooldown_start,
             start: warmup_end,
