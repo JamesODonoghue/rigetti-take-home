@@ -11,7 +11,7 @@ export const dynamic = "force-dynamic";
 const url =
   process.env.NODE_ENV === "development"
     ? "http://127.0.0.1:5328"
-    : `http://${process.env.NEXT_PUBLIC_FUNCTIONS_BASE_URL}`;
+    : `http://${process.env.VERCEL_URL}`;
 
 async function getData(): Promise<Cycle[]> {
   const data = await fetch(`${url}/api/data`);
