@@ -3,7 +3,7 @@
 import { ColumnDef } from "@tanstack/react-table";
 import { Cycle } from "../../../lib/types";
 import { ArrowUpDown } from "lucide-react";
-import { Button } from "@/client/components/ui/button";
+import { Button } from "@/components/ui/button";
 
 export const columns: ColumnDef<Cycle>[] = [
   {

@@ -1,11 +1,11 @@
 "use client";
 
-import { ChartPhaseSummary } from "@/client/components/dashboard/components/chart-phase-summary";
-import { columns } from "@/client/components/dashboard/components/columns";
-import { DataTable } from "@/client/components/dashboard/components/data-table";
+import { ChartPhaseSummary } from "@/components/dashboard/components/chart-phase-summary";
+import { columns } from "@/components/dashboard/components/columns";
+import { DataTable } from "@/components/dashboard/components/data-table";
 import { CustomBarChart } from "../ui/bar-chart";
-import { getCycleSummaries } from "@/client/components/dashboard/lib/get-cycle-summaries";
-import { Cycle } from "@/client/lib/types";
+import { getCycleSummaries } from "@/components/dashboard/lib/get-cycle-summaries";
+import { Cycle } from "@/lib/types";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 
 export default function Dashboard({ data }: { data: Cycle[] }) {
