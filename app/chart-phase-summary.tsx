@@ -2,8 +2,7 @@
 import React from "react";
 import { CycleSummary } from "./utils/get-cycle-summaries";
 import colors from "tailwindcss/colors";
-
-import { PieChart, Pie, Cell } from "recharts";
+import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 interface ChartProps<TData> {
   data: TData[];
 }
@@ -36,24 +35,30 @@ export function ChartPhaseSummary({ data }: ChartProps<CycleSummary>) {
   return (
     <>
       <h1>Phase Summary</h1>
-      <div className="flex flex-col items-center">
-        <PieChart width={480} height={256}>
-          <Pie
-            data={chartData}
-            dataKey="value"
-            nameKey="title"
-            cx="50%"
-            cy="50%"
-            outerRadius={128}
-          >
-            {data.map((entry, index) => (
-              <Cell
-                key={`cell-${index}`}
-                fill={COLORS[index % COLORS.length]}
-              />
-            ))}
-          </Pie>
-        </PieChart>
+      <div className="flex flex-col items-center w-full h-full">
+        <ResponsiveContainer width="100%" height="100%">
+          <PieChart width={480} height={256}>
+            <Pie
+              data={chartData}
+              dataKey="value"
+              nameKey="title"
+              cx="50%"
+              cy="50%"
+              outerRadius={128}
+              label={({ percent, title }) => {
+                return `${title} ${(percent * 100).toFixed(2)}%`;
+              }}
+              labelLine={false}
+            >
+              {data.map((entry, index) => (
+                <Cell
+                  key={`cell-${index}`}
+                  fill={COLORS[index % COLORS.length]}
+                />
+              ))}
+            </Pie>
+          </PieChart>
+        </ResponsiveContainer>
       </div>
     </>
   );

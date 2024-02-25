@@ -47,7 +47,6 @@ export const columns: ColumnDef<Cycle>[] = [
 ];
 
 function formatDate(dateString: string): string {
-  // Assuming dateString is in the format "YYYY-MM-DD HH:mm:ss"
   const date = new Date(dateString);
-  return date.toLocaleString(); // Adjust the format as needed
+  return date.toLocaleString();
 }
