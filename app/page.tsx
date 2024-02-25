@@ -16,7 +16,6 @@ const url =
     : `https://${process.env.VERCEL_URL}`;
 
 async function getData(): Promise<Cycle[]> {
-  // const data = await fetch("http://127.0.0.1:5328/api/data");
   const data = await fetch(`${url}/api/data`);
   const json: CycleApi[] = await data.json();
   return json.map((item) => {
