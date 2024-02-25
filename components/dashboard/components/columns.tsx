@@ -4,6 +4,7 @@ import { ColumnDef } from "@tanstack/react-table";
 import { Cycle } from "../../../lib/types";
 import { ArrowUpDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { formatDate } from "@/lib/utils";
 
 export const columns: ColumnDef<Cycle>[] = [
   {
@@ -37,22 +38,47 @@ export const columns: ColumnDef<Cycle>[] = [
   },
   {
     accessorKey: "cooldown_end",
-    header: "Cooldown End",
     cell: ({ row }) => formatDate(row.getValue("cooldown_end")),
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Cooldown End
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      );
+    },
   },
   {
     accessorKey: "warmup_start",
-    header: "Warmup Start",
     cell: ({ row }) => formatDate(row.getValue("warmup_start")),
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Warmup Start
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      );
+    },
   },
   {
     accessorKey: "warmup_end",
-    header: "Warmup End",
     cell: ({ row }) => formatDate(row.getValue("warmup_end")),
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Warmup End
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      );
+    },
   },
 ];
-
-function formatDate(dateString: string): string {
-  const date = new Date(dateString);
-  return date.toLocaleString();
-}

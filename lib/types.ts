@@ -6,3 +6,12 @@ export interface Cycle {
   warmup_start: string;
   warmup_end: string;
 }
+
+export interface CycleSummary {
+  fridgeId: string;
+  cycleNumber: number;
+  cooldown: number;
+  cold: number;
+  warmup: number;
+  warm: number | null;
+}

@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
-import { CycleSummary } from "../lib/get-cycle-summaries";
 import colors from "tailwindcss/colors";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
+import { CycleSummary } from "@/lib/types";
 interface ChartProps<TData> {
   data: TData[];
 }
