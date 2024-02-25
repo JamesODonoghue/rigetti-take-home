@@ -13,7 +13,7 @@ import { getCycleSummaries } from "./utils/get-cycle-summaries";
 const url =
   process.env.NODE_ENV === "development"
     ? "http://127.0.0.1:5328"
-    : `https://${process.env.VERCEL_URL}`;
+    : `https://${process.env.NEXT_PUBLIC_FUNCTIONS_BASE_URL}`;
 
 async function getData(): Promise<Cycle[]> {
   const data = await fetch(`${url}/api/data`);
