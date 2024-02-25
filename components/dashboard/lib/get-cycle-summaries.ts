@@ -1,4 +1,4 @@
-import { Cycle } from "../types/types";
+import { Cycle } from "../../../lib/types";
 
 export const getCooldownTime = ({ item }: { item: Cycle }) => {
   return new Date(

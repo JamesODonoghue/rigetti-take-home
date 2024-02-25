@@ -1,14 +1,20 @@
 "use client";
 
 import { ColumnDef } from "@tanstack/react-table";
-import { Cycle } from "./types/types";
-import { ArrowUpDown, MoreHorizontal } from "lucide-react";
+import { Cycle } from "../../../lib/types";
+import { ArrowUpDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const columns: ColumnDef<Cycle>[] = [
   {
     accessorKey: "fridge_id",
     header: "Fridge ID",
+    filterFn: (row, column, filter) => {
+      if (filter === "all") {
+        return true;
+      }
+      return row.getValue(column) === filter;
+    },
   },
   {
     accessorKey: "cooldown_number",

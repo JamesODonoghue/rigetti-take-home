@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { CycleSummary } from "./utils/get-cycle-summaries";
+import { CycleSummary } from "../lib/get-cycle-summaries";
 import colors from "tailwindcss/colors";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 interface ChartProps<TData> {
@@ -10,9 +10,9 @@ interface ChartProps<TData> {
 export function ChartPhaseSummary({ data }: ChartProps<CycleSummary>) {
   const COLORS = [
     colors.gray[100],
-    colors.gray[200],
     colors.gray[300],
     colors.gray[400],
+    colors.gray[500],
   ];
 
   const summariesReduced = data.reduce(
@@ -34,7 +34,6 @@ export function ChartPhaseSummary({ data }: ChartProps<CycleSummary>) {
   });
   return (
     <>
-      <h1>Phase Summary</h1>
       <div className="flex flex-col items-center w-full h-full">
         <ResponsiveContainer width="100%" height="100%">
           <PieChart width={480} height={256}>

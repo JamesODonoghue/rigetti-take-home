@@ -56,11 +56,15 @@ export function DataTable<TData, TValue>({
   });
 
   return (
-    <div>
+    <div className="flex flex-col gap-6">
       <Select
         value={(table.getColumn("fridge_id")?.getFilterValue() as string) ?? ""}
-        onValueChange={(event) => {
-          table.getColumn("fridge_id")?.setFilterValue(event);
+        onValueChange={(value) => {
+          const column = table.getColumn("fridge_id");
+          if (!column) {
+            return;
+          }
+          column.setFilterValue(value);
         }}
       >
         <SelectTrigger className="w-[180px]">
@@ -69,6 +73,7 @@ export function DataTable<TData, TValue>({
         <SelectContent>
           <SelectGroup>
             <SelectLabel>Fridge ID</SelectLabel>
+            <SelectItem value="all">All</SelectItem>
             <SelectItem value="0">0</SelectItem>
             <SelectItem value="1">1</SelectItem>
             <SelectItem value="2">2</SelectItem>

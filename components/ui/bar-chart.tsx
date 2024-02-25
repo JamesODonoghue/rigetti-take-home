@@ -1,4 +1,4 @@
-import { CycleSummary } from "@/app/utils/get-cycle-summaries";
+import { CycleSummary } from "@/components/dashboard/lib/get-cycle-summaries";
 import {
   ResponsiveContainer,
   Bar,
@@ -6,7 +6,9 @@ import {
   YAxis,
   Tooltip,
   BarChart,
+  Rectangle,
 } from "recharts";
+import colors from "tailwindcss/colors";
 
 interface BarChartProps<TData> {
   data: TData[];
@@ -17,19 +19,10 @@ export function CustomBarChart({ data, dataKey }: BarChartProps<CycleSummary>) {
     <>
       <ResponsiveContainer width="100%" height="100%">
         <BarChart data={data} width={500} height={300}>
-          <Bar
-            dataKey={dataKey}
-            fill="white"
-            style={
-              {
-                fill: "hsl(var(--foreground))",
-                opacity: 1,
-              } as React.CSSProperties
-            }
-          />
           <XAxis dataKey="cycleNumber" />
-          <YAxis domain={["dataMin", "dataMax"]} />
+          <YAxis domain={["auto", "auto"]} />
           <Tooltip
+            cursor={false}
             wrapperStyle={{
               background: "hsl(var(--background))",
               borderRadius: "4px",
@@ -39,6 +32,11 @@ export function CustomBarChart({ data, dataKey }: BarChartProps<CycleSummary>) {
               border: "1px solid hsl(var(--background))",
               borderRadius: "4px",
             }}
+          />
+          <Bar
+            dataKey={dataKey}
+            fill="hsl(var(--foreground))"
+            activeBar={<Rectangle fill={colors.gray[400]} />}
           />
         </BarChart>
       </ResponsiveContainer>

@@ -11,5 +11,5 @@ def get_csv_file():
         reader = csv.DictReader(file)
         for row in reader:
             data.append(row)
-    json_data = json.dumps(data, indent=4)
+    json_data = json.dumps(data)
     return Response(json_data)
