@@ -1,4 +1,4 @@
-import Dashboard from "@/components/dashboard/dashboard";
+import Dashboard from "@/client/components/dashboard/dashboard";
 import { Cycle } from "../lib/types";
 export const dynamic = "force-dynamic";
 const url =

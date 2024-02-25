@@ -18,7 +18,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
+} from "@/client/components/ui/table";
 import { useState } from "react";
 import {
   Select,
@@ -28,7 +28,7 @@ import {
   SelectGroup,
   SelectLabel,
   SelectItem,
-} from "@/components/ui/select";
+} from "@/client/components/ui/select";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];

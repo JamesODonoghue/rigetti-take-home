@@ -1,4 +1,4 @@
-import { CycleSummary } from "@/components/dashboard/lib/get-cycle-summaries";
+import { CycleSummary } from "@/client/components/dashboard/lib/get-cycle-summaries";
 import {
   ResponsiveContainer,
   Bar,
