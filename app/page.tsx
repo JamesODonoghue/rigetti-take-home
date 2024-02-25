@@ -1,8 +1,6 @@
-import { CustomBarChart } from "@/components/ui/bar-chart";
 import { ChartCold } from "./chart-cold";
 import { ChartCooldown } from "./chart-cooldown";
 import { ChartPhaseSummary } from "./chart-phase-summary";
-import { ChartSummary } from "./chart-summary";
 import { ChartWarm } from "./chart-warm";
 import { ChartWarmup } from "./chart-warmup";
 import { columns } from "./columns";
@@ -13,7 +11,7 @@ import { getCycleSummaries } from "./utils/get-cycle-summaries";
 const url =
   process.env.NODE_ENV === "development"
     ? "http://127.0.0.1:5328"
-    : `https://${process.env.NEXT_PUBLIC_FUNCTIONS_BASE_URL}`;
+    : `http://${process.env.NEXT_PUBLIC_FUNCTIONS_BASE_URL}`;
 
 async function getData(): Promise<Cycle[]> {
   const data = await fetch(`${url}/api/data`);
